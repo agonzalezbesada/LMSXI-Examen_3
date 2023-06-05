@@ -83,7 +83,7 @@ public class Main {
         FileWriter file;
 
         try {
-            file = new FileWriter("src\\output.json");
+            file = new FileWriter("src\\employees.json");
             file.write(jsonEmpleados);
             file.close();
 

@@ -1,15 +1,17 @@
 # LMSXI EXAMEN 3ª EVALUACION
 
-# Realiza las siguientes consultas en xquery con el fichero premios.xml (repositorio):
-## Devuelve la frase "[nombre] ha ganado el premio de [categoria] en el año [año]"
+# Realiza las siguientes consultas en xquery con el fichero premios.xml
 
+## (1 punto) Devuelve la frase "[nombre] ha ganado el premio de [categoria] en el año [año]"
 
+```
 for $x in doc("premios.xml")/premios_nobel/premios/premio
 return concat($x/premiado, ' ha ganado el premio de ', $x/@categoria, ' en el año ', $x/año)
+```
 
 Devolvemos por cada ocurrencia el resultado concatenado usando "Concat"
 
-## Una tabla html [categoria] | [premiado] ordenada de mayor a menor por los [años]
+## (1 punto) Una tabla html [categoria] | [premiado] ordenada de mayor a menor por los [años]
 ```
 <table>
 <tr>
@@ -36,7 +38,7 @@ Retornamos Iterando en formato html los componentes del xml, haciendo especial i
 
 
 
-## Incluir un nuevo premiado en un nuevo fichero
+## (2 punto) Incluir un nuevo premiado en un nuevo fichero
 
 ```
 let $nuevosPremios := 
@@ -67,7 +69,7 @@ return
 
   Se escribe en un nuevo fichero todas las coincidencias del original usando file:write(), pero introduciendo un nuevo premiado después de recorrer todos los del fichero original
 
-## Realizar un fichero nuevo incluyendo motivos en los que no tienen
+## (2 punto) Realizar un fichero nuevo incluyendo motivos en los que no tienen
 
 ```
 let $nuevosPremios :=
@@ -96,3 +98,16 @@ return
 ```
 
   Se escribe en un nuevo fichero todas las coincidencias del original file:write(), pero usando un if para determinar si existe o no un movitvo, y en caso de que no, introducirlo
+
+
+# Realiza una aplicación para usar el fichero employees.json [src](https://github.com/agonzalezbesada/LMSXI-Examen_3/tree/main/src)
+
+
+## (2 puntos) Que lea el fichero y guarde los datos en un array list
+
+Se debe leer el fichero (El cual es un objeto con un atributo empleados, que a su vez es un Array), y guardarlo en un objeto del mismo tipo.
+Posteriormente introducir el atributo Array en un ArrayList
+
+## (2 puntos) Despues de modificar algun datos en el array list que lo vuelva a guardar
+
+Se modifica el ArrayList para posteriormente convertirlo en json mediante Gson y escribirlo en un fichero para guardarlo
