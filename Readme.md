@@ -10,7 +10,7 @@ return concat($x/premiado, ' ha ganado el premio de ', $x/@categoria, ' en el a�
 Devolvemos por cada ocurrencia el resultado concatenado usando "Concat"
 
 ## Una tabla html [categoria] | [premiado] ordenada de mayor a menor por los [años]
-
+```
 <table>
 <tr>
 <th> Categoria </th>
@@ -30,7 +30,7 @@ return
 </tbody>
 }
 </table>
-
+```
 Retornamos Iterando en formato html los componentes del xml, haciendo especial incapié en el string($x/@categoria), necesario para que se vea el texto de la categoría, ya que es un atributo
 
 
@@ -38,6 +38,7 @@ Retornamos Iterando en formato html los componentes del xml, haciendo especial i
 
 ## Incluir un nuevo premiado en un nuevo fichero
 
+```
 let $nuevosPremios := 
   <premios_nobel>
     <premios>
@@ -62,11 +63,13 @@ let $nuevosPremios :=
 let $rutaArchivo := "G:\Mi unidad\DAW\LMSXI\EJERCICIOS\LMSXI-Examen_3\nuevosPremios.xml"
 return
   file:write($rutaArchivo, $nuevosPremios)
+```
 
   Se escribe en un nuevo fichero todas las coincidencias del original usando file:write(), pero introduciendo un nuevo premiado después de recorrer todos los del fichero original
 
 ## Realizar un fichero nuevo incluyendo motivos en los que no tienen
 
+```
 let $nuevosPremios :=
   <premios_nobel>
     <premios>
@@ -90,5 +93,6 @@ let $rutaArchivo := "G:\Mi unidad\DAW\LMSXI\EJERCICIOS\LMSXI-Examen_3\nuevosPrem
 
 return
   file:write($rutaArchivo, $nuevosPremios)
+```
 
   Se escribe en un nuevo fichero todas las coincidencias del original file:write(), pero usando un if para determinar si existe o no un movitvo, y en caso de que no, introducirlo
